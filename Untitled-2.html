@@ -1,0 +1,96 @@
+<!--data type-->
+<?php
+$a_bool = TRUE;   // a boolean
+$a_str  = "foo";  // a string
+$a_str2 = 'foo';  // a string
+$an_int = 12;     // an integer
+
+echo gettype($a_bool); // prints out:  boolean
+echo gettype($a_str);  // prints out:  string
+
+// If this is an integer, increment it by four
+if (is_int($an_int)) {
+    $an_int += 4;
+}
+
+// If $a_bool is a string, print it out
+// (does not print out anything)
+if (is_string($a_bool)) {
+    echo "String: $a_bool";
+}
+?>
+
+<!--boolean-->
+<?php
+var_dump((bool) "");        // bool(false)
+var_dump((bool) 1);         // bool(true)
+var_dump((bool) -2);        // bool(true)
+var_dump((bool) "foo");     // bool(true)
+var_dump((bool) 2.3e5);     // bool(true)
+var_dump((bool) array(12)); // bool(true)
+var_dump((bool) array());   // bool(false)
+var_dump((bool) "false");   // bool(true)
+?>
+
+<!--integer-->
+<?php
+$a = 1234; // decimal number
+$a = 0123; // octal number (equivalent to 83 decimal)
+$a = 0x1A; // hexadecimal number (equivalent to 26 decimal)
+$a = 0b11111111; // binary number (equivalent to 255 decimal)
+$a = 1_234_567; // decimal number (as of PHP 7.4.0)
+?>
+
+<!--float-->
+<?php
+$a = 1.234; 
+$b = 1.2e3; 
+$c = 7E-10;
+$d = 1_234.567; // as of PHP 7.4.0
+?>
+
+<!--array-->
+<?php
+$array = array(
+    "foo" => "bar",
+    "bar" => "foo",
+);
+
+// Using the short array syntax
+$array = [
+    "foo" => "bar",
+    "bar" => "foo",
+];
+?>
+
+
+<!--PHP String Functions-->
+
+<?php
+echo strlen("Hello world!"); // outputs 12
+?>
+
+<?php
+echo strrev("Hello world!"); // outputs !dlrow olleH
+?>
+
+<!--PHP Math-->
+<?php
+echo(pi()); // returns 3.1415926535898
+?>
+
+<?php
+echo(min(0, 150, 30, 20, -8, -200));  // returns -200
+echo(max(0, 150, 30, 20, -8, -200));  // returns 150
+?>
+
+<?php
+echo(abs(-6.7));  // returns 6.7
+?>
+<?php
+echo(sqrt(64));  // returns 8
+?>
+<?php
+echo(round(0.60));  // returns 1
+echo(round(0.49));  // returns 0
+?>
